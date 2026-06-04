@@ -60,11 +60,17 @@ restaurant-management/
 │
 ├── static/
 │   ├── css/
+│   │   └── style.css
 │   ├── js/
-│   ├── charts/
+│   │   └── app.js
+│   └── charts/
 │
-
-
+├── utils/
+│   ├── auth.py
+│   ├── rating.py
+│   ├── validators.py
+│   └── integrity_checks.py
+└── 
 ---
 
 ## ⚙️ Instalação
