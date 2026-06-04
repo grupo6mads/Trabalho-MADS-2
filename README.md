@@ -26,8 +26,7 @@ Sistema completo de gestão de restaurantes em tempo real, desenvolvido em Pytho
 
 ---
 
-## 📂 Estrutura
-
+```
 restaurant-management/
 │
 ├── app.py
@@ -70,7 +69,8 @@ restaurant-management/
 │   ├── rating.py
 │   ├── validators.py
 │   └── integrity_checks.py
-└── 
+│
+```
 ---
 
 ## ⚙️ Instalação
