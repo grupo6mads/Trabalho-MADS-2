@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+
+<div class="col-md-8">
+
+<div class="card shadow">
+
+<div class="card-body">
+
+<h2>Sistema Gestão Restaurantes</h2>
+
+<p>
+Plataforma profissional integrada com Google Sheets.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card shadow">
+
+<div class="card-body">
+
+<form method="POST">
+
+<input
+type="password"
+name="access_key"
+class="form-control mb-3"
+placeholder="Inserir chave">
+
+<button class="btn btn-primary w-100">
+Entrar
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

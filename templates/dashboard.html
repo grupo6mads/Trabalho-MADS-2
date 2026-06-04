@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Dashboard</h2>
+
+<div class="row">
+
+    <div class="col-md-3">
+        <a href="/mapa" class="btn btn-danger w-100 mb-3">
+            Mapa Restaurantes
+        </a>
+    </div>
+
+    <div class="col-md-3">
+        <a href="/restaurantes" class="btn btn-dark w-100 mb-3">
+            Restaurantes
+        </a>
+    </div>
+
+    <div class="col-md-3">
+        <a href="/clientes" class="btn btn-primary w-100 mb-3">
+            Clientes
+        </a>
+    </div>
+
+    <div class="col-md-3">
+        <a href="/menus" class="btn btn-success w-100 mb-3">
+            Menus
+        </a>
+    </div>
+
+    <div class="col-md-3">
+        <a href="/pedidos" class="btn btn-warning w-100 mb-3">
+            Pedidos
+        </a>
+    </div>
+
+    <div class="col-md-3">
+        <a href="/analytics" class="btn btn-info w-100 mb-3">
+            Analytics
+        </a>
+    </div>
+
+    {% if role == 'integrity' or role == 'admin' %}
+    <div class="col-md-3">
+        <a href="{{ url_for('integrity') }}" class="btn btn-warning w-100 mb-3">
+            Data Integrity Check
+        </a>
+    </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}

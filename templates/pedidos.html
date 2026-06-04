@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Pedidos</h2>
+
+<table class="table table-striped">
+
+<thead>
+<tr>
+<th>Cliente ID</th>
+<th>Cliente</th>
+<th>Restaurante NIF</th>
+<th>Restaurante</th>
+<th>Item</th>
+<th>Preço</th>
+<th>Data</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for p in pedidos %}
+
+<tr>
+<td>{{ p.Cliente_ID }}</td>    
+<td>{{ p.Cliente_Nome }}</td>
+<td>{{ p.Restaurante_NIF }}</td>
+<td>{{ p.Restaurante_Nome }}</td>
+<td>{{ p.Item_Nome }}</td>
+<td>{{ p.Preco }}</td>
+<td>{{ p.Data }}</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+{% endblock %}

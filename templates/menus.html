@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Menus</h2>
+
+<table class="table table-striped">
+
+<thead>
+<tr>
+<th>ID</th>
+<th>Nome Restaurante</th>
+<th>Nome Item</th>
+<th>Preco</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for m in menus %}
+
+<tr>
+<td>{{ m.id_menu }}</td>
+<td>{{ m.restaurante_nome }}</td>
+<td>{{ m.nome_item }}</td>
+<td>{{ m.preco }}</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+{% endblock %}

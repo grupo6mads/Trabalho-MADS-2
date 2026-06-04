@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Analytics</h2>
+
+<h4>Tabela Avaliações</h4>
+
+<table class="table table-bordered">
+
+{% for r in ratings %}
+
+<tr>
+<td>{{ r.Nome }}</td>
+<td>{{ r.Avaliacao }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<h4>Tabela Preços</h4>
+
+<table class="table table-bordered">
+
+{% for r in precos %}
+
+<tr>
+<td>{{ r.Nome }}</td>
+<td>{{ r.Preco }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

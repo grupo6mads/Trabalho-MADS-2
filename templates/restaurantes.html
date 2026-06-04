@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Restaurantes</h2>
+
+<table class="table table-striped">
+
+<thead>
+<tr>
+<th>Nome</th>
+<th>NIF</th>
+<th>Preco</th>
+<th>Avaliaco</th>
+<th>Tipo</th>
+<th>Rating</th>
+<th>Localizacao</th>
+<th>Lat</th>
+<th>Lon</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for r in restaurantes %}
+
+<tr>
+<td>{{ r.Nome }}</td>
+<td>{{ r.NIF }}</td>
+<td>{{ r.Preco }}</td>
+<td>{{ r.Avaliacao }}</td>
+<td>{{ r.Tipo }}</td>
+<td>{{ r.Rating }}</td>
+<td>{{ r.Localizacao }}</td>
+<td>{{ r.Lat }}</td>
+<td>{{ r.Lon }}</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+{% endblock %}

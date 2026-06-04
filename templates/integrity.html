@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Data Integrity Check</h2>
+
+<p>Total Restaurantes: {{ result.total_restaurantes }}</p>
+<p>Total Menus: {{ result.total_menus }}</p>
+<p>Total Clientes: {{ result.total_clientes }}</p>
+
+<h4>Issues</h4>
+
+<ul>
+{% for i in result.issues %}
+    <li>{{ i }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

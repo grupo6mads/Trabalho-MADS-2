@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Histórico Restaurante {{ nif }}</h2>
+
+<table class="table table-striped">
+
+<thead>
+<tr>
+<th>Preço</th>
+<th>Avaliação</th>
+<th>Rating</th>
+<th>Timestamp</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for h in historico %}
+
+<tr>
+<td>{{ h.Preco }}</td>
+<td>{{ h.Avaliacao }}</td>
+<td>{{ h.Rating }}</td>
+<td>{{ h.Timestamp }}</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+{% endblock %}
