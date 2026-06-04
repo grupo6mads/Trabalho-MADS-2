@@ -1,6 +1,5 @@
 from sheets_service import get_sheet
 from config import Config
-import pandas as pd
 
 def obter_analytics():
 
@@ -11,15 +10,19 @@ def obter_analytics():
 
     data = sheet.get_all_records()
 
-    df = pd.DataFrame(data)
+    total = len(data)
+
+    ratings = [float(r.get("Rating", 0)) for r in data if r.get("Rating")]
+    precos = [float(r.get("Preco", 0)) for r in data if r.get("Preco")]
 
     analytics = {
-        "total_restaurantes": len(df),
-        "media_rating": round(df["Rating"].astype(float).mean(), 2),
-        "media_preco": round(df["Preco"].astype(float).mean(), 2)
+        "total_restaurantes": total,
+        "media_rating": round(sum(ratings) / len(ratings), 2) if ratings else 0,
+        "media_preco": round(sum(precos) / len(precos), 2) if precos else 0
     }
 
     return analytics
+
 
 def restaurantes_criticos():
 
@@ -34,7 +37,10 @@ def restaurantes_criticos():
 
     for r in data:
 
-        rating = float(r["Rating"])
+        try:
+            rating = float(r.get("Rating", 0))
+        except:
+            continue
 
         if rating > 25 or rating < 18.5:
             criticos.append(r)
